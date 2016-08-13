@@ -1,0 +1,60 @@
+{r load-data}
+#load("movies.Rdata")
+
+## Part 1: Data
+Reasoning for generabizability - random sampling was used.  Any reservations should be well justified.
+Correct reasoning for causality – random assignment was used in this project.
+The data set is comprised of 651 randomly sampled movies produced and released around 2016.
+Some of these variables are only there for informational purposes and do not make any sense to include in a statistical analysis.
+actor1 through actor5 variables was used to determine whether the movie casts an actor or actress who won a best actor or actress Oscar.
+
+## Part 2: Research question
+Through analysis the rating score of several TV movies released in the same period but leads to different scores.
+Figure out the main reason of the results.
+
+## Part 3: Exploratory data analysis
+makeVector <- function(x = numeric()) {
+ m <- NULL
+  set <- function(y) {
+  x <<- y
+  m <<- NULL
+  }
+ get <- function() x
+ setmean <- function(mean) m <<- mean
+  getmean <- function() m
+  list(set = set, get = get,
+  setmean = setmean,
+  getmean = getmean)
+
+## Part 4: Modeling
+Insert a new code chunk
+title <- Dead of summer {
+  title_type <-  TV Movie
+  genre <- Mystery & Suspense
+  runtime <- 60min
+  thtr_rel_year <- 2016
+}
+imdb_rating <- 6.3
+imdb_num_votes <- 110
+top200_box: Whether or not the movie is in the Top 200 Box Office list on BoxOfficeMojo (no)
+actor1 <- Elizabeth Mitchell 
+actor2 <- Alberto Frezza 
+imdb_url <- http://www.imdb.com/title/tt5210998/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=&pf_rd_r=0R0YAEBBSE1DS2GH8J0R&pf_rd_s=center-3&pf_rd_t=51501&pf_rd_i=&ref_=il_tl_li_tt
+
+## Part 5: Prediction
+
+cachemean <- function(x, ...) {
+ m <- x$getmean()
+if(!is.null(m)) {
+  message("getting cached data")
+  return(m)
+ }
+ data <- x$get()
+ m <- mean(data, ...)
+ x$setmean(m)
+ m
+
+## Part 6: Conclusion
+The shortcoming of this TV movie is there are no so famous movie stars in it which leads to the lower rating campared to other movies
+in the same period after the linear analysis.
+So I suggest main actors and actresses are two main reasons for a movie according to the research on IMDB. 
